@@ -104,8 +104,6 @@ Visit `http://localhost:5000` to view the website.
 
 For questions about this website:
 - **Email**: adam.wirasz@gmail.com
-- **Phone**: 226-456-0457
-- **Location**: West Vancouver, BC
 
 ## License
 
