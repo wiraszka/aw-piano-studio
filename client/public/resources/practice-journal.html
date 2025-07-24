@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AW Piano Studio - Practice Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: white;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #4F46E5;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #4F46E5;
+            margin: 0;
+            font-size: 28px;
+        }
+        .header h2 {
+            color: #8B5A3C;
+            margin: 5px 0;
+            font-size: 20px;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .section h3 {
+            color: #4F46E5;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-row label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-row input {
+            border: none;
+            border-bottom: 1px solid #333;
+            padding: 5px;
+            font-size: 14px;
+            width: 200px;
+        }
+        .practice-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .practice-item span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .practice-item input[type="text"] {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .practice-item input[type="number"] {
+            width: 60px;
+        }
+        .text-area {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            min-height: 60px;
+            resize: vertical;
+        }
+        .goals-list {
+            counter-reset: goal-counter;
+        }
+        .goals-list div {
+            counter-increment: goal-counter;
+            margin-bottom: 10px;
+        }
+        .goals-list div:before {
+            content: counter(goal-counter) ". ";
+            font-weight: bold;
+            color: #4F46E5;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        @media print {
+            body { margin: 0; padding: 15px; }
+            .section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AW Piano Studio</h1>
+        <h2>Daily Practice Journal</h2>
+    </div>
+
+    <div class="section">
+        <div class="form-row">
+            <label>Date:</label>
+            <input type="text" style="width: 120px;">
+            <label style="margin-left: 30px;">Total Practice Time:</label>
+            <input type="text" style="width: 80px;">
+        </div>
+        <div class="form-row">
+            <label>Student Name:</label>
+            <input type="text" style="width: 250px;">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Pieces/Exercises Practiced</h3>
+        <div class="practice-item">
+            <span>1.</span>
+            <input type="text" placeholder="Piece/Exercise name">
+            <label>Time:</label>
+            <input type="number" placeholder="min">
+        </div>
+        <div class="practice-item">
+            <span>2.</span>
+            <input type="text" placeholder="Piece/Exercise name">
+            <label>Time:</label>
+            <input type="number" placeholder="min">
+        </div>
+        <div class="practice-item">
+            <span>3.</span>
+            <input type="text" placeholder="Piece/Exercise name">
+            <label>Time:</label>
+            <input type="number" placeholder="min">
+        </div>
+        <div class="practice-item">
+            <span>4.</span>
+            <input type="text" placeholder="Piece/Exercise name">
+            <label>Time:</label>
+            <input type="number" placeholder="min">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Technical Work</h3>
+        <div class="form-row">
+            <label>Scales:</label>
+            <input type="text" placeholder="Which scales practiced">
+            <label style="margin-left: 20px;">Tempo:</label>
+            <input type="text" style="width: 80px;" placeholder="BPM">
+        </div>
+        <div class="form-row">
+            <label>Arpeggios:</label>
+            <input type="text" placeholder="Which arpeggios practiced">
+            <label style="margin-left: 20px;">Tempo:</label>
+            <input type="text" style="width: 80px;" placeholder="BPM">
+        </div>
+        <div class="form-row">
+            <label>Etudes:</label>
+            <input type="text" placeholder="Which etudes practiced">
+            <label style="margin-left: 20px;">Tempo:</label>
+            <input type="text" style="width: 80px;" placeholder="BPM">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Today's Goals</h3>
+        <div class="goals-list">
+            <div><input type="text" style="width: 90%; border: none; border-bottom: 1px solid #333; padding: 5px;"></div>
+            <div><input type="text" style="width: 90%; border: none; border-bottom: 1px solid #333; padding: 5px;"></div>
+            <div><input type="text" style="width: 90%; border: none; border-bottom: 1px solid #333; padding: 5px;"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Challenges Encountered</h3>
+        <textarea class="text-area" placeholder="What difficulties did you face today?"></textarea>
+    </div>
+
+    <div class="section">
+        <h3>Achievements</h3>
+        <textarea class="text-area" placeholder="What went well? What improvements did you notice?"></textarea>
+    </div>
+
+    <div class="section">
+        <h3>Notes for Next Lesson</h3>
+        <textarea class="text-area" placeholder="Questions, concerns, or items to discuss with your teacher"></textarea>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 AW Piano Studio | adam.wirasz@gmail.com | 226-456-0457</p>
+    </div>
+</body>
+</html>
